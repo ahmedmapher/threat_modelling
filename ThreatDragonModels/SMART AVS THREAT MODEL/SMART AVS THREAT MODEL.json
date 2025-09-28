@@ -80,7 +80,7 @@
             },
             "attrs": {
               "label": {
-                "text": "IoT Field Getway"
+                "text": "Cloud Gateway"
               }
             },
             "visible": true,
@@ -89,7 +89,7 @@
             "id": "5348e75a-d93a-4000-90e0-70f37145f8cd",
             "data": {
               "type": "tm.BoundaryBox",
-              "name": "IoT Field Getway",
+              "name": "Cloud Gateway",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
@@ -97,11 +97,11 @@
           },
           {
             "position": {
-              "x": 546,
-              "y": 30.000000000000057
+              "x": 470,
+              "y": 30.000000000000114
             },
             "size": {
-              "width": 160,
+              "width": 260,
               "height": 120
             },
             "attrs": {
@@ -158,7 +158,7 @@
             },
             "attrs": {
               "label": {
-                "text": "IoT Cloud Getway Zone"
+                "text": "IoT Cloud Zone"
               }
             },
             "visible": true,
@@ -167,7 +167,7 @@
             "id": "7ea9fd8c-999b-4b2b-81df-600457437841",
             "data": {
               "type": "tm.BoundaryBox",
-              "name": "IoT Cloud Getway Zone",
+              "name": "IoT Cloud Zone",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
@@ -540,13 +540,6 @@
                 "spoofing": 1,
                 "repudiation": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -563,8 +556,8 @@
                 "text": "Gateway Field\nSH4"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -661,18 +654,66 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "599c7a41-8d61-44e0-8de9-f5ec4e7e76ec",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Flooding with fake requests.",
+                  "mitigation": "Input validation, request throttling, IDS monitoring.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "463a2bbc-cba5-40dd-805c-5424e3af8eb5",
+                  "title": "No Suggestions available",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Fake devices try to connect",
+                  "mitigation": "Device certificates and mutual TLS authentication",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "826d494c-ab3e-4b7d-a927-e17464ddc269",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Getway Config altered",
+                  "mitigation": "Hardened OS, config integrity checks.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
             "position": {
               "x": 916,
-              "y": 80.00000000000011
+              "y": 55.000000000000114
             },
             "size": {
               "width": 100,
@@ -683,8 +724,8 @@
                 "text": "Gateway Field\nSH4"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -781,18 +822,92 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "4c8606a8-1477-4750-9e0e-2796a5abdf6e",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Stolen crendentails",
+                  "mitigation": "Multi-factor authentication, zero-trust model.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                },
+                {
+                  "id": "813e1b50-353f-4544-91e1-cf6425420007",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "API injection attacks",
+                  "mitigation": "Input Sanitization, WAF protection",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                },
+                {
+                  "id": "0c545b01-82e2-422d-b867-7ad285aa3cbc",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "API flooding",
+                  "mitigation": "Rate limiting, traffic monitoring",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                },
+                {
+                  "id": "f38e2a2a-ca48-4d8e-823e-e255428a60f5",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Identity service leaks user data",
+                  "mitigation": "Encrypt PII, secure key vaults, token-based auth.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                },
+                {
+                  "id": "a263a253-c442-4906-8536-4e28f9c48657",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 17,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 3,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
             "position": {
-              "x": 569.75,
-              "y": 60.000000000000114
+              "x": 504,
+              "y": 65.0000000000001
             },
             "size": {
               "width": 112.5,
@@ -924,8 +1039,8 @@
                 "text": "Azure IoT\n& Event\n(SH5)"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1022,12 +1137,60 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "663cb456-e476-41be-847d-fd7a5b99cb58",
+                  "title": "Tampering",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Logs or telemetry altered.",
+                  "mitigation": "Encrypt data at rest, enable auditing and version control.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                },
+                {
+                  "id": "fe1f5ffd-7b70-41e5-b9e9-025c7f03aa2b",
+                  "title": "ID",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Cloud data breach.",
+                  "mitigation": "RBAC, network segmentation, strict access policies.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                },
+                {
+                  "id": "628f5b12-0375-41c9-aac8-511b43bea568",
+                  "title": "Priviledge Escalation",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Compromise of ML/analytics pipeline.",
+                  "mitigation": "Least privilege, secure containers, signed ML models.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -1164,8 +1327,8 @@
                 "text": "Data Vlid\n& Pentest\n(SH7)"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1262,12 +1425,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "a0b42073-2504-437c-a27f-4e659a1b1228",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Attackers pose as legitimate streams.",
+                  "mitigation": "Strong identity verification and input filtering.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                },
+                {
+                  "id": "285f370c-8835-4d09-9876-5870da9fee5a",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Bypassing validation to insert malicious data.",
+                  "mitigation": "IDS/IPS, strict validation rules, runtime checks.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1527,57 +1725,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Req/Res",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Req/Res"
-            ],
-            "id": "6f94aa11-6b11-4e92-bdc9-2b83fd6dee7e",
-            "source": {
-              "cell": "5a024af7-af84-4ef8-83ad-2a32efb0e195",
-              "port": "d2dfc5e2-fd3d-4c53-8816-ab13128f0b0e"
-            },
-            "target": {
-              "cell": "7f587d5e-0950-4826-814d-3b02024883a2",
-              "port": "e874903f-f69a-4fbb-a8d5-60cdcddc7d1a"
-            },
-            "vertices": [
-              {
-                "x": 840,
-                "y": 90
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "",
               "description": "",
               "outOfScope": false,
@@ -1605,7 +1752,7 @@
             "vertices": [
               {
                 "x": 940,
-                "y": 200
+                "y": 170
               }
             ]
           },
@@ -1876,6 +2023,133 @@
               "y": 250
             },
             "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "de30fc14-773a-4ad8-9503-1469522ae427",
+            "source": {
+              "x": 639,
+              "y": 245
+            },
+            "target": {
+              "x": 739,
+              "y": 345
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Req/Res",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Req/Res"
+            ],
+            "id": "852be0e6-8384-45f7-ae24-eabd47e3147d",
+            "source": {
+              "x": 710,
+              "y": 90
+            },
+            "target": {
+              "cell": "7f587d5e-0950-4826-814d-3b02024883a2",
+              "port": "e874903f-f69a-4fbb-a8d5-60cdcddc7d1a"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Trust Boundary"
+            ],
+            "id": "0c4d9717-c4e8-46de-9c63-fd5fe82438c9",
+            "source": {
+              "x": 840,
+              "y": 20
+            },
+            "target": {
+              "x": 860,
+              "y": 150
+            },
+            "vertices": [
+              {
+                "x": 840,
+                "y": 40
+              },
+              {
+                "x": 860,
+                "y": 40
+              }
+            ]
           },
           {
             "position": {
@@ -2356,12 +2630,187 @@
               "privilegeLevel": "",
               "threats": []
             }
+          },
+          {
+            "position": {
+              "x": 639,
+              "y": 60.000000000000114
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "User\nServices"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2b797e63-78ef-407b-8a80-01650951a428"
+                },
+                {
+                  "group": "right",
+                  "id": "03f29775-21f7-4059-8da4-d59f92b0fa0d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "6daa9950-c967-4cf8-a47e-a65c3769b557"
+                },
+                {
+                  "group": "left",
+                  "id": "6b1f6d2a-9b9f-4854-8eb4-d78ca7d3fa29"
+                }
+              ]
+            },
+            "id": "d6112d45-b0c8-4fe1-823b-eac45542bfda",
+            "zIndex": 15,
+            "data": {
+              "type": "tm.Process",
+              "name": "User\nServices",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "0febfde3-bab6-4034-84f3-77a63ecab041",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Fake app controls vehicle.",
+                  "mitigation": "App signing, certificate pinning, store validation.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": ""
+                },
+                {
+                  "id": "9da654aa-ee32-4719-aaaa-f5c517caa1da",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Reverse engineering the app to issue rogue commands.",
+                  "mitigation": "Code obfuscation, secure API tokens.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": ""
+                },
+                {
+                  "id": "2f1db6a5-0972-42a4-9c6d-cf3a36e0630a",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Location/speed leakage.",
+                  "mitigation": "End-to-end encryption, minimal data exposure.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "Sir Abuzar Zafar",
-    "threatTop": 2
+    "threatTop": 20
   }
 }
